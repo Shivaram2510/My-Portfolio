@@ -1,6 +1,6 @@
 import React from "react";
 import { Button } from "@/components/ui/button";
-import { Download, Github, Linkedin, Mail, Globe } from "lucide-react";
+import { Download, Mail, Globe } from "lucide-react";
 import { personalInfo } from "@/lib/constants";
 
 const Hero = () => {
@@ -8,15 +8,12 @@ const Hero = () => {
     document.getElementById("projects")?.scrollIntoView({ behavior: "smooth" });
   };
 
-  const handleDownloadResume = async () => {
-    try {
-      const response = await fetch("/api/resume");
-      const data = await response.json();
-      // TODO: Implement actual file download
-      alert(data.message);
-    } catch (error) {
-      console.error("Error downloading resume:", error);
-    }
+  const handleDownloadResume = () => {
+    // For demo purposes - in a real app, you'd link to an actual resume file
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // You would upload your actual resume file to public folder
+    link.download = 'Naradashi_Shiva_Ram_Resume.pdf';
+    link.click();
   };
 
   return (
@@ -69,20 +66,6 @@ const Hero = () => {
           </div>
 
           <div className="flex justify-center space-x-6 mt-8">
-            <a
-              href={personalInfo.linkedin}
-              className="text-white hover:text-blue-400 transition-colors transform hover:scale-110"
-              data-testid="link-linkedin"
-            >
-              <Linkedin className="w-6 h-6" />
-            </a>
-            <a
-              href={personalInfo.github}
-              className="text-white hover:text-purple-400 transition-colors transform hover:scale-110"
-              data-testid="link-github"
-            >
-              <Github className="w-6 h-6" />
-            </a>
             <a
               href={personalInfo.portfolio}
               className="text-white hover:text-blue-400 transition-colors transform hover:scale-110"

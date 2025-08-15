@@ -5,9 +5,7 @@ export const personalInfo = {
   phone: "+91-8309450179",
   location: "Hyderabad, Telangana, India",
   summary: "Highly skilled and innovative Full-Stack Developer with a strong foundation in designing, developing, and deploying high-impact applications that leverage AI and machine learning. Proven expertise in building end-to-end solutions, from dynamic front-end interfaces with React to scalable back-end services with Node.js and MongoDB.",
-  linkedin: "#",
-  github: "#",
-  portfolio: "#"
+  portfolio: "https://naradashi-shiva-ram-portfolio.vercel.app"
 };
 
 export const skills = {

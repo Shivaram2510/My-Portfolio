@@ -4,9 +4,9 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Label } from "@/components/ui/label";
 import { useToast } from "@/hooks/use-toast";
-import { Mail, Phone, MapPin, Linkedin, Github, Globe } from "lucide-react";
+import { Mail, Phone, MapPin, Globe } from "lucide-react";
 import { personalInfo } from "@/lib/constants";
-import { contactMessageSchema } from "@shared/schema";
+import { validateContactForm, type ContactMessage } from "@/types";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -23,42 +23,32 @@ const Contact = () => {
     setFormData((prev) => ({ ...prev, [name]: value }));
   };
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
-    try {
-      // Validate form data
-      contactMessageSchema.parse(formData);
-
-      const response = await fetch("/api/contact", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (data.success) {
-        toast({
-          title: "Message sent!",
-          description: data.message,
-        });
-        setFormData({ name: "", email: "", subject: "", message: "" });
-      } else {
-        throw new Error(data.message);
-      }
-    } catch (error) {
+    // Validate form data
+    const errors = validateContactForm(formData as ContactMessage);
+    
+    if (errors.length > 0) {
       toast({
-        title: "Error",
-        description: "Please check your form data and try again.",
+        title: "Validation Error",
+        description: errors[0],
         variant: "destructive",
       });
-    } finally {
       setIsSubmitting(false);
+      return;
     }
+
+    // Simulate form submission - in a real app, you'd send to a service like Formspree or Netlify Forms
+    setTimeout(() => {
+      toast({
+        title: "Message sent!",
+        description: "Thank you for your message. I'll get back to you soon!",
+      });
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setIsSubmitting(false);
+    }, 1000);
   };
 
   return (
@@ -191,22 +181,8 @@ const Contact = () => {
 
             {/* Social Links */}
             <div className="card-elevated p-6 rounded-xl" data-testid="contact-social-links">
-              <h4 className="font-semibold mb-4">Follow Me</h4>
+              <h4 className="font-semibold mb-4">Connect With Me</h4>
               <div className="flex space-x-4">
-                <a
-                  href={personalInfo.linkedin}
-                  className="w-12 h-12 bg-blue-600 rounded-full flex items-center justify-center hover:bg-blue-700 transition-colors"
-                  data-testid="social-linkedin"
-                >
-                  <Linkedin className="text-white w-5 h-5" />
-                </a>
-                <a
-                  href={personalInfo.github}
-                  className="w-12 h-12 bg-gray-800 rounded-full flex items-center justify-center hover:bg-gray-700 transition-colors"
-                  data-testid="social-github"
-                >
-                  <Github className="text-white w-5 h-5" />
-                </a>
                 <a
                   href={personalInfo.portfolio}
                   className="w-12 h-12 bg-gradient-to-r from-blue-500 to-purple-500 rounded-full flex items-center justify-center hover:from-blue-600 hover:to-purple-600 transition-colors"
