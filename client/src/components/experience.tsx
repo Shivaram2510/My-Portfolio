@@ -21,7 +21,7 @@ const Experience = () => {
           {/* Experience Item */}
           <div className="relative flex items-center mb-16">
             <div className="w-1/2 pr-8 text-right">
-              <div className="glassmorphism p-6 rounded-xl" data-testid="experience-card">
+              <div className="card-elevated p-6 rounded-xl" data-testid="experience-card">
                 <h3 className="text-xl font-bold mb-2" data-testid="experience-job-title">
                   {experience[0].title}
                 </h3>
@@ -60,7 +60,7 @@ const Experience = () => {
           <h3 className="text-2xl font-bold mb-8 text-center" data-testid="education-title">
             Education
           </h3>
-          <div className="glassmorphism p-8 rounded-2xl max-w-4xl mx-auto" data-testid="education-card">
+          <div className="card-elevated p-8 rounded-2xl max-w-4xl mx-auto" data-testid="education-card">
             <div className="flex flex-col md:flex-row items-center gap-8">
               <div className="flex-1">
                 <h4 className="text-xl font-bold mb-2" data-testid="education-degree">

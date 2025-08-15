@@ -14,7 +14,7 @@ const About = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-center">
           <div className="order-2 lg:order-1">
-            <div className="glassmorphism p-8 rounded-2xl">
+            <div className="card-elevated p-8 rounded-2xl">
               <h3 className="text-2xl font-bold mb-4 text-white" data-testid="about-summary-title">
                 Professional Summary
               </h3>
@@ -41,11 +41,11 @@ const About = () => {
                   <div className="text-gray-400 text-sm">Projects Completed</div>
                 </div>
                 <div className="text-center" data-testid="stat-coverage">
-                  <div className="text-2xl font-bold text-cyan-400">95%</div>
+                  <div className="text-2xl font-bold text-blue-400">95%</div>
                   <div className="text-gray-400 text-sm">Code Coverage</div>
                 </div>
                 <div className="text-center" data-testid="stat-accuracy">
-                  <div className="text-2xl font-bold text-green-400">91%</div>
+                  <div className="text-2xl font-bold text-purple-400">91%</div>
                   <div className="text-gray-400 text-sm">ML Accuracy</div>
                 </div>
               </div>

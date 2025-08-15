@@ -73,10 +73,10 @@ const Skills = () => {
     const colorMap = {
       blue: "text-blue-500 from-blue-500 to-blue-400",
       purple: "text-purple-500 from-purple-500 to-purple-400",
-      cyan: "text-cyan-500 from-cyan-500 to-cyan-400",
-      green: "text-green-500 from-green-500 to-green-400",
-      yellow: "text-yellow-500 from-yellow-500 to-yellow-400",
-      red: "text-red-500 from-red-500 to-red-400",
+      cyan: "text-blue-400 from-blue-400 to-blue-300",
+      green: "text-purple-400 from-purple-400 to-purple-300",
+      yellow: "text-blue-300 from-blue-300 to-blue-200",
+      red: "text-purple-300 from-purple-300 to-purple-200",
     };
     return colorMap[color as keyof typeof colorMap];
   };
@@ -105,7 +105,7 @@ const Skills = () => {
             return (
               <div
                 key={category.title}
-                className="glassmorphism p-6 rounded-xl hover:transform hover:scale-105 transition-all duration-300"
+                className="card-elevated p-6 rounded-xl hover:transform hover:scale-105 transition-all duration-300"
                 data-testid={`skill-category-${category.title.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}
               >
                 <div className="flex items-center mb-4">

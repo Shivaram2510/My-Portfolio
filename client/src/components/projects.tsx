@@ -22,7 +22,7 @@ const Projects = () => {
           {projects.map((project) => (
             <div
               key={project.id}
-              className="glassmorphism rounded-2xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 cursor-pointer"
+              className="card-elevated rounded-2xl overflow-hidden group hover:transform hover:scale-105 transition-all duration-300 cursor-pointer"
               onClick={() => setSelectedProject(project)}
               data-testid={`project-card-${project.id}`}
             >
@@ -46,10 +46,10 @@ const Projects = () => {
                   ))}
                 </div>
                 <div className="flex justify-between items-center">
-                  <span className="text-green-400 font-semibold" data-testid={`project-highlight-${project.id}`}>
+                  <span className="text-blue-400 font-semibold" data-testid={`project-highlight-${project.id}`}>
                     {project.highlight}
                   </span>
-                  <ArrowRight className="text-gray-400 group-hover:text-blue-400 transition-colors" />
+                  <ArrowRight className="text-gray-400 group-hover:text-purple-400 transition-colors" />
                 </div>
               </div>
             </div>
@@ -58,7 +58,7 @@ const Projects = () => {
 
         {/* Project Modal */}
         <Dialog open={!!selectedProject} onOpenChange={() => setSelectedProject(null)}>
-          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto glassmorphism border-slate-700" data-testid="project-modal">
+          <DialogContent className="max-w-4xl max-h-[90vh] overflow-y-auto card-elevated border-slate-700" data-testid="project-modal">
             {selectedProject && (
               <>
                 <DialogHeader>
@@ -89,7 +89,7 @@ const Projects = () => {
                       </ul>
                     </div>
                     <div>
-                      <h4 className="text-xl font-semibold mb-3 text-cyan-400">Technology Stack</h4>
+                      <h4 className="text-xl font-semibold mb-3 text-blue-400">Technology Stack</h4>
                       <div className="flex flex-wrap gap-2 mb-4">
                         {selectedProject.details.technologies.map((tech) => (
                           <Badge key={tech} variant="secondary" className="text-sm" data-testid={`modal-tech-${tech.toLowerCase().replace(/[^a-z0-9]/g, '-')}`}>
@@ -97,7 +97,7 @@ const Projects = () => {
                           </Badge>
                         ))}
                       </div>
-                      <h4 className="text-xl font-semibold mb-3 text-green-400">Results</h4>
+                      <h4 className="text-xl font-semibold mb-3 text-purple-400">Results</h4>
                       <ul className="text-gray-300 space-y-2">
                         {selectedProject.details.results.map((result, index) => (
                           <li key={index} data-testid={`modal-result-${index}`}>

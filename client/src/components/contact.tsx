@@ -76,7 +76,7 @@ const Contact = () => {
 
         <div className="grid lg:grid-cols-2 gap-12 items-start">
           {/* Contact Form */}
-          <div className="glassmorphism p-8 rounded-2xl" data-testid="contact-form-container">
+          <div className="card-elevated p-8 rounded-2xl" data-testid="contact-form-container">
             <h3 className="text-2xl font-bold mb-6">Send Message</h3>
             <form onSubmit={handleSubmit} className="space-y-6" data-testid="contact-form">
               <div className="grid md:grid-cols-2 gap-6">
@@ -159,7 +159,7 @@ const Contact = () => {
 
           {/* Contact Information */}
           <div className="space-y-8">
-            <div className="glassmorphism p-6 rounded-xl" data-testid="contact-info-email">
+            <div className="card-elevated p-6 rounded-xl" data-testid="contact-info-email">
               <div className="flex items-center mb-4">
                 <Mail className="text-blue-500 text-2xl mr-4" />
                 <div>
@@ -169,7 +169,7 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="glassmorphism p-6 rounded-xl" data-testid="contact-info-phone">
+            <div className="card-elevated p-6 rounded-xl" data-testid="contact-info-phone">
               <div className="flex items-center mb-4">
                 <Phone className="text-purple-500 text-2xl mr-4" />
                 <div>
@@ -179,9 +179,9 @@ const Contact = () => {
               </div>
             </div>
 
-            <div className="glassmorphism p-6 rounded-xl" data-testid="contact-info-location">
+            <div className="card-elevated p-6 rounded-xl" data-testid="contact-info-location">
               <div className="flex items-center mb-4">
-                <MapPin className="text-cyan-500 text-2xl mr-4" />
+                <MapPin className="text-blue-400 text-2xl mr-4" />
                 <div>
                   <h4 className="font-semibold">Location</h4>
                   <p className="text-gray-300">{personalInfo.location}</p>
@@ -190,7 +190,7 @@ const Contact = () => {
             </div>
 
             {/* Social Links */}
-            <div className="glassmorphism p-6 rounded-xl" data-testid="contact-social-links">
+            <div className="card-elevated p-6 rounded-xl" data-testid="contact-social-links">
               <h4 className="font-semibold mb-4">Follow Me</h4>
               <div className="flex space-x-4">
                 <a

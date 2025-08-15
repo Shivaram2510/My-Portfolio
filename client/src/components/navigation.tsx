@@ -53,7 +53,7 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           <div className="flex items-center">
             <span className="text-xl font-bold bg-gradient-to-r from-blue-500 to-purple-500 bg-clip-text text-transparent" data-testid="logo">
-              Shivaram.dev
+              Naradashi Shiva Ram
             </span>
           </div>
 

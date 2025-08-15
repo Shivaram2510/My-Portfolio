@@ -39,7 +39,7 @@ const Hero = () => {
       <div className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-4xl mx-auto">
         <div className="animate-slide-up">
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold mb-6 leading-tight" data-testid="hero-title">
-            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-400">Shivaram</span>
+            Hi, I'm <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-400 to-purple-400">Naradashi Shiva Ram</span>
           </h1>
           <h2 className="text-2xl sm:text-3xl lg:text-4xl font-semibold mb-6 text-gray-200" data-testid="hero-subtitle">
             {personalInfo.title}
@@ -85,14 +85,14 @@ const Hero = () => {
             </a>
             <a
               href={personalInfo.portfolio}
-              className="text-white hover:text-cyan-400 transition-colors transform hover:scale-110"
+              className="text-white hover:text-blue-400 transition-colors transform hover:scale-110"
               data-testid="link-portfolio"
             >
               <Globe className="w-6 h-6" />
             </a>
             <a
               href={`mailto:${personalInfo.email}`}
-              className="text-white hover:text-green-400 transition-colors transform hover:scale-110"
+              className="text-white hover:text-purple-400 transition-colors transform hover:scale-110"
               data-testid="link-email"
             >
               <Mail className="w-6 h-6" />
@@ -103,7 +103,7 @@ const Hero = () => {
         {/* Floating elements */}
         <div className="absolute top-20 left-10 w-20 h-20 bg-blue-500/20 rounded-full animate-float"></div>
         <div className="absolute bottom-20 right-10 w-16 h-16 bg-purple-500/20 rounded-full animate-float" style={{ animationDelay: '-1s' }}></div>
-        <div className="absolute top-40 right-20 w-12 h-12 bg-cyan-500/20 rounded-full animate-float" style={{ animationDelay: '-2s' }}></div>
+        <div className="absolute top-40 right-20 w-12 h-12 bg-blue-500/20 rounded-full animate-float" style={{ animationDelay: '-2s' }}></div>
       </div>
     </section>
   );

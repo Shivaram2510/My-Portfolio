@@ -15,8 +15,8 @@ const Footer = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="text-center">
           <p className="text-gray-400 mb-4" data-testid="footer-copyright">
-            © 2025 Shivaram Naradashi. Crafted with{" "}
-            <Heart className="inline w-4 h-4 text-red-500" /> using AI-powered tools.
+            © 2025 Naradashi Shiva Ram. Crafted with{" "}
+            <Heart className="inline w-4 h-4 text-purple-500" /> using AI-powered tools.
           </p>
           <div className="flex justify-center space-x-6">
             <button
